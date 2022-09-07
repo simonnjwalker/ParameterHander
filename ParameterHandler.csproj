@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Seamlex.Utilities.ParameterHandler</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Simon Walker</Authors>
+    <Company>Seamlex</Company>
+    <Description>Takes args[] passed into a console application and gives help as setup.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>ParameterHandler Parameter Handler ParameterHandling C# seamlex seamlex.net</PackageTags>
+    <PackageProjectUrl>https://www.nuget.org/packages/Seamlex.Utilities.ParameterHandler</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/simonnjwalker/ParameterHandler</RepositoryUrl>
+    <PackageIcon>seamlex.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="seamlex.png" Pack="true" PackagePath="\"/>
+    <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include="LICENSE.txt" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+</Project>

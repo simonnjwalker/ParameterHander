@@ -1,0 +1,47 @@
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Seamlex.Utilities;
+#pragma warning disable CS8602, CS8600
+namespace Seamlex.Utilities
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> parameters = new List<string>();
+            if(args.Length==0)
+            {
+                parameters.Add("--help");
+            }
+            else
+            {
+                parameters.AddRange(args.ToList());
+            }
+
+            // this performed a generic analysis of parameters
+            ParameterHander ph = new ParameterHander();
+
+            // this is an app-specific setup of parameter-info
+            CsgenParameters csgenparainfo = new CsgenParameters();
+            ph.SetParameterInfo(csgenparainfo.GetParameterInfo());
+            if(!ph.SetParameters(parameters))
+            {
+                Console.WriteLine(ph.lastmessage);
+            }
+            else if(ph.IsHelpRequested())
+            {
+                foreach(string helpline in ph.GetHelp())
+                    Console.WriteLine(helpline);
+            }
+            else
+            {
+                // the parameters are valid - now do the action 
+                Console.WriteLine("The parameters are valid - put the action code here.");
+            }
+        }
+    }
+}
